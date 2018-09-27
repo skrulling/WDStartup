@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}WDStartup{% endblock %}</title>
+{% load staticfiles %}
+<link rel="stylesheet" href="{% static 'wdshome/style.css' %}" type="text/css">
+ <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+</head>
+<body>
+<div id="dokument">
+<nav id="navigasjon" class="navbar navbar-inverse">
+    <div class="container-fluid">
+
+        <!-- Header -->
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#topNavBar">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="{% url 'wdshome:index'%}"><img src="http://i.imgur.com/7hq2cwn.png" width="30"></a>
+        </div>
+
+        <!-- Items -->
+        <div class="collapse navbar-collapse" id="topNavBar">
+            <ul class="nav navbar-nav">
+                <li><a href="{% url 'wdshome:index'%}">Hjem</a></li>
+                <li><a href="{% url 'wdshome:annonser' %}">Annonser</a></li>
+                <li><a href="{% url 'wdshome:utviklere' %}">Utviklere</a></li>
+            </ul>
+
+            <ul class="nav navbar-nav navbar-right">
+                <li>
+                    <a href="{% url 'wdshome:ny_annonse' %}">
+                        <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>&nbsp; Ny annonse
+                    </a>
+                </li>
+                <li>
+                    <a href="{% url 'account_login' %}">
+                        <span class="glyphicon glyphicon-user" aria-hidden="true"></span>&nbsp; Logg inn
+                    </a>
+                </li>
+            </ul>
+        </div>
+
+    </div>
+</nav>
+<div id="main-body">
+{% block body %}
+{% endblock %}
+</div>
+<div class="footer">
+    <div class="jumbotron" id="footjumbo">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-4">
+                    <h4 style="font-size: 100%" class="text-center">Utviklet av:</h4>
+                    <h4 style="font-size: 100%" class="text-center">Mikkel Espolin Birkeland</h4>
+                </div>
+                <div class="col-sm-4">
+                    <h4 style="font-size: 100%" class="text-center">Kontakt:</h4>
+                    <h4 style="font-size: 100%" class="text-center">MikkelEB@gmail.com</h4>
+                    <div class="text-center"><img src="http://i.imgur.com/7hq2cwn.png" width="50"></div>
+                </div>
+                <div class="col-sm-4">
+                    <h4 style="font-size: 100%" class="text-center">Søker utviklere:</h4>
+                    <h4 style="font-size: 100%" class="text-center">Er på utkikk etter utviklere med erfaring fra Django og muligens Angular. Bootstrap er også flott.</h4>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+</body>
+</html>

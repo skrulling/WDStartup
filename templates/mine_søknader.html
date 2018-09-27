@@ -1,0 +1,21 @@
+{% extends 'base2.html' %}
+
+{% block body %}
+    <div class="container">
+        <h1 class="text-center">Mine søknader</h1>
+    </div>
+<div class="container">
+    {% for søknad in søknader %}
+        <div class="row">
+        <div class="container">
+            <div id="jumo-front" class="col-sm-6 col-sm-offset-3 jumbotron">
+        <h2 style="color: #006dcc" class="text-center" id="tittel-ann">Tittel annonse: {{ søknad.annonse }}</h2>
+        <h2 class="text-center" id="dato-ann">dato: {{ søknad.dato }}</h2>
+        <p class="text-center" id="epost-ann">Oppgitt epost: {{ søknad.epost }}</p>
+        <p id="om-ann">Søkertekst: {{ søknad.tekst }}</p>
+                </div>
+            </div>
+        </div>
+    {% endfor %}
+</div>
+{% endblock %}

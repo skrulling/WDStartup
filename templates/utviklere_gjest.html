@@ -1,0 +1,49 @@
+{% extends 'base_notuser.html' %}
+
+
+{% block body %}
+
+    <div class="container">
+        <h1 style="color: #006dcc" class="text-center">Alle utviklere</h1>
+    </div>
+
+<div class="row">
+<div class="container col-sm-offset-2">
+
+{% for objekt in utviklere %}
+    <div id="alle-annonser" class="col-sm-4">
+        <div class="container-fluid">
+            <p id="dato-ann">{{ objekt.dato }}</p>
+                <h3 style="color: #5cb85c; text-align: center" id="tittel-ann">{{ objekt.tittel }}</h3>
+                <p id="tag-ann">Nøkkelord: {{ objekt.tags }}</p>
+                <button id="lesmer" type="button" class="btn btn-success center-block"><a href="{% url 'wdshome:spesifikk_utviklere' objekt.id %}" style="color: white">Mer om utvikler</a></button>
+
+        </div>
+    </div>
+
+{% endfor %}
+
+</div>
+
+<div class="col-sm-4 col-sm-offset-7">
+<div class="pagination">
+    <span class="step-links">
+        {% if utviklere.has_previous %}
+            <button style="background-color: #363636" class="btn"><a id="next-prev" href="?page={{ utviklere.previous_page_number }}">previous</a></button>
+        {% endif %}
+
+        <span class="current">
+            Page {{ utviklere.number }} of {{ utviklere.paginator.num_pages }}.
+        </span>
+
+        {% if annonse.has_next %}
+            <button style="background-color: #363636" class="btn"><a id="next-prev" href="?page={{ utviklere.next_page_number }}">next</a></button>
+        {% endif %}
+    </span>
+</div>
+</div>
+
+
+</div>
+
+{% endblock %}

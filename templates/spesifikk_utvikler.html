@@ -1,0 +1,22 @@
+{% extends 'base2.html' %}
+
+{% block body %}
+<div class="container col-sm-offset-2">
+<div class="row">
+    <div id="jumo-front" class="jumbotron col-sm-8 text-center">
+        <h2 style="color: #5cb85c" id="margin-bottom">{{ utvikler.tittel }}</h2>
+        <p id="user-ann"><span id="underline">Denne annonsen er lagt ut av:</span> {{ utvikler.user }}</p>
+        <div class="row">
+        <p class="col-sm-4" id="dato-ann">{{ utvikler.dato }}</p>
+        <p class="col-sm-4"  id="tag-ann"><span id="underline">Nøkkelord:</span> {{ utvikler.tags }}</p>
+        <p class="col-sm-4"  id="epost-ann"><span id="underline">Epost:</span> {{ utvikler.epost }}</p>
+        </div>
+        <div id="jumbo-utvikler" class="jumbotron">
+        <p style="color: #ffffff" id="om-ann"><span id="underline">Beskrivelse:</span> {{ utvikler.info }}</p>
+            </div>
+    </div>
+</div>
+
+</div>
+
+{% endblock %}

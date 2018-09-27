@@ -1,0 +1,38 @@
+{% extends 'base2.html' %}
+
+
+{% block body %}
+    <div class="row">
+        <div class="container">
+            <div class="col-sm-10 col-sm-offset-4">
+                <div id="jumbo-min-profil" class="jumbotron">
+                    <h3 id="jumbo-profil-bruker" class="jumbotron">Brukernavn: {{ user.username }}</h3>
+                    <h4 id="min-profil-info">Epost: {{ user.email }}</h4>
+                    {% for objekt in extrainfo %}
+                    <h4 id="min-profil-info">Hjemmeside: {{ objekt.hjemmeside }}</h4>
+                    <h4 id="min-profil-info">Erfaring: {{ objekt.erfaring }}</h4>
+                    <h4 id="min-profil-info">Bio: {{ objekt.om_meg }}</h4>
+                        <a href="{% url 'wdshome:rediger_profil' %}" class="btn btn-primary btn-block">Rediger</a>
+                    {% endfor %}
+                    <a href="{% url 'account_email' %}"><button class="btn btn-primary btn-block">Rediger epost</button></a>
+                    <a href="{% url 'account_change_password' %}"><button class="btn btn-success btn-block">Bytt passord</button></a>
+                    <h3 style="color: #006dcc" class="text-center">Mine annonser</h3>
+                    {% for annonse in annonser %}
+                        <p class="text-center" id="tittel-ann">{{ annonse.tittel }}</p>
+                        <p id="dato-ann">{{ annonse.dato }}</p>
+                        <a href="{% url 'wdshome:spesifikk_annonse' annonse.id %}"><button class="btn btn-primary btn-block">Se annonse</button></a>
+                    {% endfor %}
+
+                    <h3 style="color: #5cb85c" class="text-center">Mine Søknader</h3>
+                {% for søknad in søknader %}
+                        <p class="text-center" id="tittel-ann">{{ søknad.tittel }}</p>
+                        <p id="dato-ann">{{ søknad.dato }}</p>
+                        <a href="{% url 'wdshome:søknader' søknad.id %}"><button class="btn btn-success btn-block">Se søknad</button></a>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+{% endblock %}

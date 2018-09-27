@@ -1,0 +1,153 @@
+#dokument {
+    background-color: #ffffff;
+    height: 100%;
+    min-height: 1000px;
+}
+#footjumbo{
+    background-color: #474747 !important;
+    margin-bottom: 0;
+}
+#footjumbo h4{
+    color: white;
+}
+#tittel-ann{
+font-size: 150%;
+}
+#dato-ann{
+    font-style: italic;
+    font-size: small;
+}
+#kval-ann{
+    font-size: medium;
+}
+#tag-ann{
+    font-size: 80%;
+    font-style: italic;
+}
+#antall-ann{
+    font-size: 75%;
+}
+
+#lesmer{
+    margin-bottom: 40px;
+
+    color: white;
+}
+#alle-annonser{
+    background-color: #E8E8E8;
+    border-radius: 3px;
+    margin: 10px 10px 10px 10px;
+    border: solid;
+    border-width: 1px;
+    border-color: #C7C7C7;
+}
+
+#next-prev{
+    color: white;
+}
+#main-body{
+    min-height: 800px;
+}
+#underline{
+    text-decoration: underline;
+}
+#boks-annonse{
+    border: solid;
+    border-width: 2px;
+    border-radius: 4px;
+    margin-bottom: 5px;
+    border-color: white;
+}
+#epost-ann{
+    font-size: 90%;
+}
+#om-ann{
+font-size: 90%;
+}
+#jumbo-utvikler{
+    background-color: #006dcc !important;
+    margin-bottom: 0;
+    margin-top: 30px;
+    border: solid;
+    border-width: 1px;
+    border-color: #C7C7C7;
+}
+
+.jumbotron{
+    background-color: #E8E8E8 !important;
+}
+#navigasjon{
+    background-color:#1E5166 ;
+    border-radius: 0;
+    border-color: #1E5166;
+    margin-bottom: 0;
+    padding-bottom: 5px;
+}
+.navbar-inverse .navbar-brand{
+    color: white !important;
+}
+.navbar-inverse .navbar-nav>li>a{
+   color: white !important;
+}
+#jumbo-min-profil{
+    width: 450px;
+
+}
+#jumbo-profil-bruker{
+   background-color: #006dcc !important;
+    color: #ffffff;
+}
+#min-profil-info{
+    margin-bottom: 30px;
+}
+#margin-bottom{
+    margin-bottom: 30px;
+}
+#margin-top{
+    margin-top: 30px;
+}
+#meny-block {
+    background-color: #006dcc !important;
+    color: #ffffff !important;
+}
+#slett{
+    margin-top: 1%;
+    margin-left: 84%;
+    position: absolute;
+    border-radius: 10px;
+}
+#knapp-slett{
+    background-color: #AD0C14;
+    color: #ffffff;
+    border-radius: 20%;
+;
+}
+#container-annonser{
+    background-color: #ffffff;
+}
+#container-utviklere{
+    background-color: #F5F5F5;
+}
+#jumo-front{
+    background-color: #E8E8E8 !important;
+    border: solid;
+    border-width: 1px;
+    border-color: #C7C7C7;
+}
+#tittel-forside{
+   text-align: center;
+    font-size: 400%;
+    color: #ffffff;
+}
+#undertittel-forside{
+    text-align: center;
+    font-size: 100%;
+    color: #ffffff;
+}
+#container-tittel{
+    padding-bottom: 50px;
+    padding-top: 50px;
+    background-color: #006dcc;
+
+
+}

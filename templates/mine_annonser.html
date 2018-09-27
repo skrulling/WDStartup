@@ -1,0 +1,47 @@
+{% extends 'base2.html' %}
+
+{% block body %}
+    <div class="container">
+<div class="row">
+{% for objekt in annonse %}
+    <div id="alle-annonser" class="col-sm-3 col-sm-offset-4">
+            <form id="slett" action="{% url 'wdshome:slett_annonse' objekt.id %}" method="post" style="display: inline;">
+                                {% csrf_token %}
+                                <input type="hidden" name="annonse_id" value="{{ objekt.id }}" />
+                                <button id="knapp-slett" type="submit" class="btn btn-default btn-sm">
+                                    <span class="glyphicon glyphicon-trash"></span>
+                                </button>
+                            </form>
+            <p id="dato-ann">{{ objekt.dato }}</p>
+                <h3 class="text-center" id="tittel-ann"><a href="{% url 'wdshome:spesifikk_annonse' objekt.id %}">{{ objekt.tittel }}</a></h3>
+                <p id="tag-ann">Nøkkelord: {{ objekt.tags }}</p>
+                <p id="antall-ann">Antall stillinger: {{ objekt.stillinger }}</p>
+                <button id="lesmer" type="button" class="btn btn-primary center-block"><a href="{% url 'wdshome:spesifikk_annonse' objekt.id %}" style="color: white">Se på stillingen</a></button>
+                <button id="søknader" type="button" class="btn btn-success center-block"><a href="{% url 'wdshome:søknader' objekt.id %}" style="color: white">Se søknader</a></button>
+        </div>
+
+{% endfor %}
+</div>
+<div class="row">
+<div class="col-sm-4 col-sm-offset-4">
+<div class="pagination">
+    <span class="step-links">
+        {% if annonse.has_previous %}
+            <button style="background-color: #363636" class="btn"><a id="next-prev" href="?page={{ annonse.previous_page_number }}">previous</a></button>
+        {% endif %}
+
+        <span class="current">
+            Page {{ annonse.number }} of {{ annonse.paginator.num_pages }}.
+        </span>
+
+        {% if annonse.has_next %}
+            <button style="background-color: #363636" class="btn"><a id="next-prev" href="?page={{ annonse.next_page_number }}">next</a></button>
+        {% endif %}
+    </span>
+</div>
+</div>
+</div>
+
+
+</div>
+{% endblock %}

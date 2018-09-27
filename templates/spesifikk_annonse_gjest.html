@@ -1,0 +1,22 @@
+{% extends 'base_notuser.html' %}
+
+{% block body %}
+<div class="container col-sm-offset-2">
+<div class="row">
+    <div id="jumo-front" class="jumbotron col-sm-8 text-center">
+        <h2 style="color: #006dcc" id="margin-bottom">{{ annonse.tittel }}</h2>
+        <p id="user-ann"><span id="underline">Denne annonsen er lagt ut av:</span> {{ annonse.user }}</p>
+        <div class="row">
+        <p class="col-sm-4" id="dato-ann">{{ annonse.dato }}</p>
+        <p class="col-sm-4" id="tag-ann"><span id="underline">Nøkkelord:</span> {{ annonse.tags }}</p>
+        <p class="col-sm-4" id="antall-ann"><span id="underline">Antall stillinger:</span> {{ annonse.stillinger }}</p>
+            </div>
+        <div class="jumbotron" id="jumbo-utvikler">
+        <p><span id="underline">Beskrivelse:</span> {{ annonse.info }}</p>
+            </div>
+    </div>
+</div>
+
+</div>
+
+{% endblock %}

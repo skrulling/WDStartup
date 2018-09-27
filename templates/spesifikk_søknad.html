@@ -1,0 +1,16 @@
+{% extends 'base2.html' %}
+
+{% block body %}
+   <div class="container">
+    <div class="row">
+    {% for felt in vis_søknader %}
+        <div id="jumo-front" class="jumbotron col-sm-4">
+    <h2 style="color: #006dcc" id="tittel-ann">Søknad sendt inn av: {{ felt.søker }}</h2>
+    <p id="dato-ann">Dato og tid for søknad: {{ felt.dato }}</p>
+    <p id="epost-ann">Søkers epostadresse: {{ felt.epost }}</p>
+    <p id="om-ann">Søketekst: {{ felt.tekst }}</p>
+        </div>
+    {% endfor %}
+     </div>
+    </div>
+{% endblock %}

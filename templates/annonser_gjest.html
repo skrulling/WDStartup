@@ -1,0 +1,51 @@
+{% extends 'base_notuser.html' %}
+
+
+{% block body %}
+
+    <div class="container">
+        <h1 style="color: #006dcc" class="text-center">Alle annonser</h1>
+    </div>
+
+<div class="row">
+
+<div class="container col-sm-offset-2">
+
+{% for objekt in annonse %}
+    <div id="alle-annonser" class="col-sm-4">
+        <div class="container-fluid">
+            <p id="dato-ann">{{ objekt.dato }}</p>
+                <h3 style="color: #006dcc; text-align: center" id="tittel-ann"><a href="{% url 'wdshome:spesifikk_annonse' objekt.id %}">{{ objekt.tittel }}</a></h3>
+                <p id="tag-ann">Nøkkelord: {{ objekt.tags }}</p>
+                <p id="antall-ann">Antall stillinger: {{ objekt.stillinger }}</p>
+                <button id="lesmer" type="button" class="btn btn-primary center-block"><a href="{% url 'wdshome:spesifikk_annonse' objekt.id %}" style="color: white">Se på stillingen</a></button>
+
+        </div>
+    </div>
+
+{% endfor %}
+
+</div>
+
+<div class="col-sm-4 col-sm-offset-4">
+<div class="pagination">
+    <span class="step-links">
+        {% if annonse.has_previous %}
+            <button style="background-color: #363636" class="btn"><a id="next-prev" href="?page={{ annonse.previous_page_number }}">previous</a></button>
+        {% endif %}
+
+        <span class="current">
+            Page {{ annonse.number }} of {{ annonse.paginator.num_pages }}.
+        </span>
+
+        {% if annonse.has_next %}
+            <button style="background-color: #363636" class="btn"><a id="next-prev" href="?page={{ annonse.next_page_number }}">next</a></button>
+        {% endif %}
+    </span>
+</div>
+</div>
+
+
+</div>
+
+{% endblock %}

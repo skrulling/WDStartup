@@ -1,0 +1,56 @@
+{% extends 'base_notuser.html' %}
+
+
+{% block body %}
+
+    <div id="container-tittel" class="container-fluid">
+    <div class="text-center"><img src="http://i.imgur.com/7hq2cwn.png" width="120"></div>
+        <h1 id="tittel-forside">Web Dev Café</h1>
+        <h3 id="undertittel-forside">A calm environment for aspiring web developers to meet up, get together, and shape the future.</h3>
+    </div>
+
+<div class="row">
+
+<div id="container-annonser" class="container-fluid">
+            <h2 style="margin-bottom: 40px; color: #006dcc" class="text-center">Siste Annonser</h2>
+            {% for objekt in annonser %}
+                <div class="col-sm-3">
+        <div id="jumo-front" class="jumbotron">
+                <div id="annonse">
+                <p id="dato-ann">{{ objekt.dato }}</p>
+                <h3 style="color: #006dcc; text-align: center" id="tittel-ann">{{ objekt.tittel }}</h3>
+                <div class="row">
+                <p class="col-sm-6" id="tag-ann">Nøkkelord: {{ objekt.tags }}</p>
+                <p class="col-sm-6" id="antall-ann">Antall stillinger: {{ objekt.stillinger }}</p>
+                    </div>
+                <a href="{% url 'wdshome:spesifikk_annonse' objekt.id %}" class="btn btn-primary center-block" style="margin-bottom: 20px; color: white">Les mer</a>
+                </div>
+                    </div>
+                 </div>
+            {% endfor %}
+        </div>
+
+    </div>
+
+    <div class="row">
+
+    <div id="container-utviklere" class="container-fluid">
+
+        <h2 style="margin-bottom: 40px; color: #5cb85c" class="text-center">Siste Utviklere</h2>
+            {% for objekt in utviklere %}
+                <div class="col-sm-3">
+                <div id="jumo-front" class="jumbotron">
+            <div id="annonse">
+            <p id="dato-ann">{{ objekt.dato }}</p>
+                <h3 style="color: #5cb85c; text-align: center" id="tittel-ann">{{ objekt.tittel }}</h3>
+                <p id="tag-ann">Nøkkelord: {{ objekt.tags }}</p>
+                <a href="{% url 'wdshome:spesifikk_utviklere' objekt.id %}" class="btn btn-success center-block" style="color: white;margin-bottom: 20px">Mer om utvikler</a>
+                </div>
+                </div>
+                </div>
+            {% endfor %}
+
+    </div>
+    </div>
+
+{% endblock %}
